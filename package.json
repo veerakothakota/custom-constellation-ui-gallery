@@ -1,5 +1,5 @@
 {
-  "name": "pega-constellation-ui-gallery",
+  "name": "custom-constellation-ui-gallery",
   "version": "4.0.3",
   "description": "A UI Gallery of Constellation DX Components",
   "keywords": [
@@ -62,6 +62,7 @@
     "validateAll": "custom-dx-components buildAllComponents"
   },
   "dependencies": {
+    "@amcharts/amcharts5": "^5.15.5",
     "@arcgis/core": "^5.0.17",
     "@dagrejs/dagre": "^3.0.0",
     "@fullcalendar/core": "^6.1.20",
