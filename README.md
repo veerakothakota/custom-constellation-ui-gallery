@@ -1,35 +1,56 @@
-# Custom Constellation Custom DX Components UI Gallery
+# Custom Constellation DX Gallery - Veera Kothakota
 
+This repository contains a personalized collection of high-quality, production-ready custom components for the Pega Constellation DX environment.
 
-For documentaion Constellation Custom DX Components UI Gallery refer - https://github.com/pegasystems/constellation-ui-gallery
+## 🚀 Active Components
 
-# Pega_Extensions_PasswordInputEnhanced
+### 1. Password Input Enhanced
+A secure text input field designed for sensitive data (passwords, SSNs, API keys).
+- **Security:** Automatic masking in read-only/review modes.
+- **UX:** Interactive eye-toggle to reveal plaintext.
+- **Pruned:** Lightweight bundle with no unused Pega boilerplate.
 
-## Overview
-`Pega_Extensions_PasswordInputEnhanced` is a highly secure, custom Constellation DX component built to handle sensitive text input (such as passwords, API keys, or SSNs) within Pega applications. It replaces the default text input to provide a better user experience and stricter security in review modes.
+### 2. Twitter Feed Widget
+A modern, enterprise-grade social media integration.
+- **Architecture:** Uses a secure, proxied architecture via Pega Data Pages to handle external API requests.
+- **Features:** Dynamic hashtag filtering, avatar support, and live engagement metrics (likes, retweets, replies).
+- **Design:** Clean, card-based interface following modern design patterns.
 
-## ✨ Key Features
+## 🛠️ Getting Started
 
-### 1. Interactive Visibility Toggling
-- **Dynamic Masking:** By default, all keystrokes are masked (`type="password"`).
-- **Eye / Eye-Off Toggle:** The component integrates `@pega/cosmos-react-core`'s standard icons, allowing users to temporarily reveal the plaintext value by clicking the eye icon inside the input field.
+### Prerequisites
+- Node.js (>= 24.4.1)
+- npm (>= 11.4.2)
+- Pega Infinity Server (24.1+)
 
-### 2. Enhanced Security in Read-Only Modes
-Pega forms often transition to review or summary screens. This component intercepts those states to prevent accidental data leaks:
-- When rendered in `DISPLAY_ONLY`, `LABELS_LEFT`, or `STACKED_LARGE_VAL` modes, the component automatically suppresses the raw Pega clipboard value.
-- It instead renders a static string of `********` to the DOM, ensuring that sensitive data cannot be scraped or viewed by shoulder-surfers during review stages.
+### Installation
+```bash
+npm install
+```
 
-### 3. Lightweight & Pruned Boilerplate
-- **No Unused Code:** Unlike standard CLI-generated components, this component has been aggressively pruned.
-- **Removed Bloat:** It does not contain irrelevant logic for AI text suggestions (`suggestionsHandler`), case status badging, or rich-text formatters, resulting in a leaner bundle size and faster load times.
+### Local Development (Storybook)
+```bash
+npm run start
+```
+View components in isolation at `http://localhost:6006`.
 
-### 4. Seamless Pega Integration
-- **State Binding:** Uses the standard `getPConnect().getStateProps()` to read values and `getPConnect().getActionsApi().updateFieldValue()` to securely dispatch user input back to the server.
+### Validation & Building
+```bash
+npm run validateAll
+```
+Ensures all components meet Pega's schema and linting requirements.
 
-## 🛠️ Development & Testing
-- **Storybook:** Fully configured and grouped under `Fields/Password Input Enhanced`. The Storybook environment safely mocks `window.PCore` to prevent crashes outside of the Pega runtime.
-- **Unit Testing:** Comprehensive Jest/React Testing Library coverage (`demo.test.tsx`) that asserts the correct rendering of the password field, placeholder strings, and mocked states.
+## 📦 Publishing
+To publish the library to your Pega environment:
+1. Configure `tasks.config.json` with your server details.
+2. Run authentication:
+```bash
+npm run authenticate
+```
+3. Publish all components:
+```bash
+npm run publishAll
+```
 
-## Installation
-If you are developing this locally, ensure you have run `npm install` and your environment has the global `pega-cosmos-react-work.d.ts` declaration file to prevent missing module type errors.
-
+---
+*Created and maintained by Veera Kothakota.*

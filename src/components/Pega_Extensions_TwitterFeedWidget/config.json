@@ -1,0 +1,61 @@
+{
+    "name": "Pega_Extensions_TwitterFeedWidget",
+    "label": "Twitter Feed",
+    "description": "Twitter Feed",
+    "organization": "Pega",
+    "version": "1.0.0",
+    "library": "Extensions",
+    "componentKey": "Pega_Extensions_TwitterFeedWidget",
+    "type": "Widget",
+    "subtype": [
+        "PAGE",
+        "CASE"
+    ],
+    "subtypeLabel": "PAGE and CASE",
+    "icon": "OneColumnPage.svg",
+    "properties": [
+        {
+            "name": "heading",
+            "label": "Heading",
+            "format": "TEXT"
+        },
+        {
+            "name": "dataPage",
+            "label": "Data Page with X API call",
+            "format": "TEXT",
+            "required": true
+        },
+        {
+            "name": "parameterName",
+            "label": "Parameter Name",
+            "format": "TEXT"
+        },
+        {
+            "name": "parameterValue",
+            "label": "Parameter Value",
+            "format": "TEXT",
+            "required": "$this.parameterName != \"\""
+        },
+        {
+            "format": "LABEL",
+            "label": "About",
+            "name": "PegaAboutLabel",
+            "variant": "h3"
+        },
+        {
+            "format": "LABEL",
+            "label": "Pega_Extensions 1.0.0, Fri May 01 2026, 25.1.2-397",
+            "name": "PegaAboutData",
+            "variant": "primary"
+        }
+    ],
+    "defaultConfig": {
+        "heading": "Twitter Feed",
+        "dataPage": "",
+        "parameterName": "query",
+        "parameterValue": "#Constellation"
+    },
+    "buildDate": "2026-05-02T03:55:46.419Z",
+    "infinityVersion": "25.1.2-397",
+    "packageCosmosVersion": "8.17.2"
+}

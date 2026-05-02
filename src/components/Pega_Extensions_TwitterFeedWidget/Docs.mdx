@@ -1,0 +1,34 @@
+import { Meta, Primary, Controls, Story } from '@storybook/addon-docs/blocks';
+import * as DemoStories from './demo.stories';
+
+<Meta of={DemoStories} />
+
+# Overview
+
+The Twitter Feed Widget allows users to display a live Twitter (X) feed directly within a Pega application. It uses a secure, proxied architecture via Pega Data Pages to fetch and display tweets related to specific hashtags or search queries.
+
+## Key Features
+- **Secure Integration:** Offloads external API requests to Pega Data Pages, avoiding CORS issues and protecting API credentials.
+- **Dynamic Filtering:** Supports configurable parameters through the `parameterName` and `parameterValue` properties.
+- **Interactive UI:** Features a sleek, modern design with tweet cards, avatars, and engagement metrics (replies, retweets, likes).
+- **Infinite Loading:** Supports a "Load More" pattern to handle multiple tweets without cluttering the UI.
+
+## Configuration
+To use this widget, you must configure a Pega Data Page (e.g., `D_TwitterFeed`) that accepts a `query` parameter and returns an array of data objects with the following fields:
+- `pyID`: Unique ID for the tweet.
+- `AuthorName` / `pyUserName`: Name of the tweet author.
+- `Handle`: Twitter handle (e.g., @pega).
+- `Text` / `pyMessageText`: The content of the tweet.
+- `AvatarURL`: URL to the author's profile picture.
+- `Timestamp`: Human-readable time since the tweet was posted.
+
+<Primary />
+
+## Props
+
+<Controls />
+
+# Example
+The widget is typically placed in a dashboard or a case review page to provide real-time social context.
+
+![Twitter Feed Widget Example](/TwitterFeedWidget_Example.png)

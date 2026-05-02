@@ -1,27 +1,18 @@
 {
   "extends": "@pega/tsconfig/index.json",
   "include": ["./**/*", ".storybook/**/*"],
-  "exclude": [
-    "**/*.mjs",
-    "dist",
-    "**/*.test.tsx",
-    "node_modules",
-    "lib",
-    "storybook-static",
-    "Pega_Extensions",
-    "store"
-  ],
+  "exclude": ["**/*.mjs"],
   "compilerOptions": {
+    "moduleResolution": "bundler",
     "noEmit": true,
     "allowJs": true,
-    "ignoreDeprecations": "6.0",
-    "importsNotUsedAsValues": "remove",
     "skipLibCheck": true,
-    "baseUrl": "./",
-    "moduleResolution": "bundler",
-    "module": "ESNext",
+    "ignoreDeprecations": "5.0",
     "paths": {
-      "@pega/pcore-pconnect-typedefs/*": ["node_modules/@pega/pcore-pconnect-typedefs/*"]
-    }
+      "@pega/pcore-pconnect-typedefs/*": ["./node_modules/@pega/pcore-pconnect-typedefs/*"]
+    },
+    "esModuleInterop": true,
+    "types": ["jest", "node", "@types/jest"],
+    "verbatimModuleSyntax": true
   }
 }

@@ -11,8 +11,8 @@ global.open = jest.fn();
 global.fetch = jest.fn(() =>
   Promise.resolve({
     json: () => Promise.resolve(() => 'xxx'),
-    arrayBuffer: () => Promise.resolve(() => 'yyy'),
-  }),
+    arrayBuffer: () => Promise.resolve(() => 'yyy')
+  })
 ) as jest.Mock;
 
 window.URL.createObjectURL = jest.fn();
@@ -21,77 +21,80 @@ window.URL.createObjectURL = jest.fn();
 window.ResizeObserver = jest.fn(() => ({
   observe: () => {},
   unobserve: () => {},
-  disconnect: () => {},
+  disconnect: () => {}
 }));
 
 // mocks IntersectionObserver
-(window as any).IntersectionObserver = jest.fn(() => ({
+window.IntersectionObserver = jest.fn(() => ({
   root: null,
-  rootMargin: '0px',
-  scrollMargin: '0px',
+  rootMargin: '0',
+  scrollMargin: '0',
   thresholds: [],
   takeRecords: () => [],
   observe: () => {},
   unobserve: () => {},
-  disconnect: () => {},
+  disconnect: () => {}
 })) as any;
 
-// mocks createSVGPoint
-Object.defineProperty(global.SVGSVGElement.prototype, 'createSVGPoint', {
-  writable: true,
-  value: jest.fn().mockImplementation(() => ({
-    x: 0,
-    y: 0,
-    matrixTransform: jest.fn().mockImplementation(() => ({
-      x: 0,
-      y: 0,
-    })),
-  })),
-});
-
-// mocks getBBox on SVGTextElement
-(global.SVGElement.prototype as any).getBBox = () => {
-  return {
-    x: 0,
-    y: 0,
-    width: 30,
-    height: 15,
-    bottom: 0,
-    left: 0,
-    right: 0,
-    top: 0,
-    toJSON: () => '',
-  };
-};
-
-// Mocks the window.matchMedia function used in useBreakpoint hook
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
-  value: jest.fn().mockImplementation((query) => ({
+  value: jest.fn().mockImplementation(query => ({
     matches: false,
     media: query,
     onchange: null,
-    addListener: jest.fn(),
-    removeListener: jest.fn(),
+    addListener: jest.fn(), // Deprecated
+    removeListener: jest.fn(), // Deprecated
     addEventListener: jest.fn(),
     removeEventListener: jest.fn(),
-    dispatchEvent: jest.fn(),
-  })),
+    dispatchEvent: jest.fn()
+  }))
 });
 
-// Mock Web Animations API
-Object.defineProperty(Element.prototype, 'animate', {
-  writable: true,
-  value: jest.fn().mockImplementation(() => ({
-    play: jest.fn(),
-    pause: jest.fn(),
-    finish: jest.fn(),
-    cancel: jest.fn(),
-    reverse: jest.fn(),
-    addEventListener: jest.fn(),
-    removeEventListener: jest.fn(),
-    dispatchEvent: jest.fn(),
-  })),
-});
+// // mocks createSVGPoint
+// Object.defineProperty(global.SVGSVGElement.prototype, 'createSVGPoint', {
+//   writable: true,
+//   value: jest.fn().mockImplementation(() => ({
+//     x: 0,
+//     y: 0,
+//     matrixTransform: jest.fn().mockImplementation(() => ({
+//       x: 0,
+//       y: 0
+//     }))
+//   }))
+// });
 
-jest.setTimeout(TIMEOUT);
+// // mocks getBBox on SVGTextElement
+// (global.SVGElement.prototype as any).getBBox = () => {
+//   return {
+//     x: 0,
+//     y: 0,
+//     width: 30,
+//     height: 15,
+//     bottom: 0,
+//     left: 0,
+//     right: 0,
+//     top: 0,
+//     toJSON: () => ''
+//   };
+// };
+
+// // Mocks the window.matchMedia function used in useBreakpoint hook
+// Object.defineProperty(window, 'matchMedia', {
+//   writable: true,
+//   value: jest.fn().mockImplementation(query => ({
+//     matches: false,
+//     media: query,
+//     onchange: null,
+//     addListener: jest.fn(),
+//     removeListener: jest.fn(),
+//     addEventListener: jest.fn(),
+//     removeEventListener: jest.fn(),
+//     dispatchEvent: jest.fn()
+//   }))
+// });
+
+// jest.setTimeout(TIMEOUT);
+
+// // speeds up *ByRole queries a bit
+// // https://github.com/testing-library/dom-testing-library/issues/552
+// configure({ defaultHidden: true });

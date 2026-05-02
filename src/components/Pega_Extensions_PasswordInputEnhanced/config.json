@@ -1,139 +1,154 @@
 {
-  "name": "Pega_Extensions_PasswordInputEnhanced",
-  "label": "Password Input Enhanced",
-  "description": "Password Input Enhanced",
-  "organization": "Pega",
-  "version": "4.0.4",
-  "library": "Extensions",
-  "componentKey": "Pega_Extensions_PasswordInputEnhanced",
-  "type": "Field",
-  "subtype": "Text",
-  "subtypeLabel": "Text",
-  "icon": "images/pz-text-input-active.svg",
-  "properties": [
-    {
-      "name": "label",
-      "label": "Field label",
-      "format": "TEXT",
-      "required": true
-    },
-    {
-      "name": "labelOption",
-      "label": "Field label",
-      "format": "SELECT",
-      "defaultValue": "custom",
-      "visibility": "@PLATFORMNAME != 'launchpad'",
-      "source": [
+    "name": "Pega_Extensions_PasswordInputEnhanced",
+    "label": "Password Input Enhanced",
+    "description": "Password Input Enhanced",
+    "organization": "Pega",
+    "version": "1.0.0",
+    "library": "Extensions",
+    "componentKey": "Pega_Extensions_PasswordInputEnhanced",
+    "type": "Field",
+    "subtype": "Text",
+    "subtypeLabel": "Text",
+    "icon": "images/pz-text-input-active.svg",
+    "properties": [
         {
-          "key": "default",
-          "value": "Default"
+            "name": "label",
+            "label": "Field label",
+            "format": "TEXT",
+            "required": true
         },
         {
-          "key": "custom",
-          "value": "Custom"
-        }
-      ]
-    },
-    {
-      "name": "label",
-      "label": "Custom field label",
-      "format": "VALUEINPUT",
-      "required": true,
-      "ruleType": "Paragraph",
-      "visibility": "@PLATFORMNAME != 'launchpad'"
-    },
-    {
-      "name": "readOnly",
-      "label": "Edit mode",
-      "format": "READONLY"
-    },
-    {
-      "label": "Column settings",
-      "format": "GROUP",
-      "visibility": "@VIEWTYPE == 'MultiRecordDisplayAsTable'",
-      "properties": [
-        {
-          "name": "columnWidth",
-          "label": "Column width",
-          "format": "SELECT",
-          "source": [
-            {
-              "key": "auto",
-              "value": "Auto"
-            },
-            {
-              "key": "custom",
-              "value": "Custom"
-            }
-          ]
+            "name": "labelOption",
+            "label": "Field label",
+            "format": "SELECT",
+            "defaultValue": "custom",
+            "visibility": "@PLATFORMNAME != 'launchpad'",
+            "source": [
+                {
+                    "key": "default",
+                    "value": "Default"
+                },
+                {
+                    "key": "custom",
+                    "value": "Custom"
+                }
+            ]
         },
         {
-          "name": "width",
-          "label": "Width (px)",
-          "format": "NUMBER",
-          "visibility": "$this.columnWidth == 'custom'"
-        }
-      ]
-    },
-    {
-      "label": "Input settings",
-      "format": "GROUP",
-      "visibility": "(!readOnly = true)",
-      "properties": [
-        {
-          "name": "placeholder",
-          "label": "Placeholder",
-          "format": "TEXT"
+            "name": "label",
+            "label": "Custom field label",
+            "format": "VALUEINPUT",
+            "required": true,
+            "ruleType": "Paragraph",
+            "visibility": "@PLATFORMNAME != 'launchpad'"
         },
         {
-          "name": "helperText",
-          "label": "Helper text",
-          "format": "TEXT"
-        }
-      ]
-    },
-    {
-      "label": "Conditions",
-      "format": "GROUP",
-      "properties": [
-        {
-          "name": "required",
-          "label": "Required",
-          "format": "REQUIRED",
-          "visibility": "(!readOnly = true)"
+            "name": "readOnly",
+            "label": "Edit mode",
+            "format": "READONLY"
         },
         {
-          "name": "disabled",
-          "label": "Disabled",
-          "format": "DISABLED",
-          "visibility": "(!readOnly = true)"
+            "label": "Column settings",
+            "format": "GROUP",
+            "visibility": "@VIEWTYPE == 'MultiRecordDisplayAsTable'",
+            "properties": [
+                {
+                    "name": "columnWidth",
+                    "label": "Column width",
+                    "format": "SELECT",
+                    "source": [
+                        {
+                            "key": "auto",
+                            "value": "Auto"
+                        },
+                        {
+                            "key": "custom",
+                            "value": "Custom"
+                        }
+                    ]
+                },
+                {
+                    "name": "width",
+                    "label": "Width (px)",
+                    "format": "NUMBER",
+                    "visibility": "$this.columnWidth == 'custom'"
+                }
+            ]
         },
         {
-          "name": "visibility",
-          "label": "Visibility",
-          "format": "VISIBILITY"
-        }
-      ]
-    },
-    {
-      "label": "Advanced",
-      "format": "GROUP",
-      "collapsible": true,
-      "properties": [
+            "label": "Input settings",
+            "format": "GROUP",
+            "visibility": "(!readOnly = true)",
+            "properties": [
+                {
+                    "name": "placeholder",
+                    "label": "Placeholder",
+                    "format": "TEXT"
+                },
+                {
+                    "name": "helperText",
+                    "label": "Helper text",
+                    "format": "TEXT"
+                }
+            ]
+        },
         {
-          "name": "testId",
-          "label": "Test ID",
-          "format": "TEXT",
-          "ignorePattern": "[^-_\\p{N}\\p{L}]",
-          "includeAnnotations": false
+            "label": "Conditions",
+            "format": "GROUP",
+            "properties": [
+                {
+                    "name": "required",
+                    "label": "Required",
+                    "format": "REQUIRED",
+                    "visibility": "(!readOnly = true)"
+                },
+                {
+                    "name": "disabled",
+                    "label": "Disabled",
+                    "format": "DISABLED",
+                    "visibility": "(!readOnly = true)"
+                },
+                {
+                    "name": "visibility",
+                    "label": "Visibility",
+                    "format": "VISIBILITY"
+                }
+            ]
+        },
+        {
+            "label": "Advanced",
+            "format": "GROUP",
+            "collapsible": true,
+            "properties": [
+                {
+                    "name": "testId",
+                    "label": "Test ID",
+                    "format": "TEXT",
+                    "ignorePattern": "[^-_\\p{N}\\p{L}]",
+                    "includeAnnotations": false
+                }
+            ]
+        },
+        {
+            "format": "LABEL",
+            "label": "About",
+            "name": "PegaAboutLabel",
+            "variant": "h3"
+        },
+        {
+            "format": "LABEL",
+            "label": "Pega_Extensions 1.0.0, Fri May 01 2026, 25.1.2-397",
+            "name": "PegaAboutData",
+            "variant": "primary"
         }
-      ]
-    }
-  ],
-  "defaultConfig": {
-    "label": "@L $this.label",
-    "detailFVLItem": true,
-    "isFormWidth" : false,
-    "isContainerWidth" : false
-  }
+    ],
+    "defaultConfig": {
+        "label": "@L $this.label",
+        "detailFVLItem": true,
+        "isFormWidth": false,
+        "isContainerWidth": false
+    },
+    "buildDate": "2026-05-02T03:55:43.641Z",
+    "infinityVersion": "25.1.2-397",
+    "packageCosmosVersion": "8.17.2"
 }

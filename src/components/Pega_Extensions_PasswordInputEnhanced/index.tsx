@@ -47,7 +47,8 @@ function PegaExtensionsPasswordInputEnhanced(props: PegaExtensionsPasswordInputE
   const maxLength = fieldMetadata?.maxLength;
   const hasValueChange = useRef(false);
 
-  let { value, readOnly = false, required = false, disabled = false } = props;
+  const { value } = props;
+  let { readOnly = false, required = false, disabled = false } = props;
   [readOnly, required, disabled] = [readOnly, required, disabled].map(
     (prop) => prop === true || (typeof prop === 'string' && prop === 'true')
   );

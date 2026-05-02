@@ -9,37 +9,6 @@
     "lib",
     "**/.DS_Store",
     "**/*.zip",
-    "**/*.tgz",
-    ".eslintrc.json"
-  ],
-  "allowCompoundWords": true,
-  "words": [
-    "arcgis",
-    "camelcase",
-    "dagrejs",
-    "daygrid",
-    "ESRI",
-    "fullcalendar",
-    "Gantt",
-    "IBAN",
-    "imask",
-    "imaskjs",
-    "isday",
-    "jsbarcode",
-    "Leanez",
-    "Lenovo",
-    "nopan",
-    "OPENWORKBYHANDLE",
-    "pangea",
-    "pasteable",
-    "PHARMACODE",
-    "PYCASESUMMARY",
-    "PYGENERICFIELDS",
-    "reactflow",
-    "SAOAUTH",
-    "Talia",
-    "timegrid",
-    "widthpx",
-    "wkid"
+    "**/*.tgz"
   ]
 }
