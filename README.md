@@ -10,11 +10,15 @@ A secure text input field designed for sensitive data (passwords, SSNs, API keys
 - **UX:** Interactive eye-toggle to reveal plaintext.
 - **Pruned:** Lightweight bundle with no unused Pega boilerplate.
 
+![Password Input Enhanced Screenshot](./screenshots/PasswordInputEnhanced.png)
+
 ### 2. Twitter Feed Widget
 A modern, enterprise-grade social media integration.
 - **Architecture:** Uses a secure, proxied architecture via Pega Data Pages to handle external API requests.
 - **Features:** Dynamic hashtag filtering, avatar support, and live engagement metrics (likes, retweets, replies).
 - **Design:** Clean, card-based interface following modern design patterns.
+
+![Twitter Feed Widget Screenshot](./screenshots/TwitterFeedWidget.png)
 
 ## 🛠️ Getting Started
 
