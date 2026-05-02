@@ -10,7 +10,10 @@ A modern, enterprise-grade social media integration.
 - **Features:** Dynamic hashtag filtering, avatar support, and live engagement metrics (likes, retweets, replies).
 - **Design:** Clean, card-based interface following modern design patterns.
 
-![Twitter Feed Widget Screenshot](./screenshots/TwitterFeedWidget.png)
+![Story Book Screenshot](./screenshots/TwitterFeedWidget.png)
+![Case Widget Settings Screenshot](./screenshots/Widget_Screenshot_1.png)
+![Case Feed Widget Error Screenshot](./screenshots/Widget_Screenshot_2.png)
+![Case Feed Widget Screenshot](./screenshots/Widget_Screenshot_3.png)
 
 ### 2. Password Input Enhanced
 A secure text input field designed for sensitive data (passwords, SSNs, API keys).
