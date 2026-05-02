@@ -2,6 +2,8 @@
 
 This repository contains a personalized collection of high-quality, production-ready custom components for the Pega Constellation DX environment.
 
+Components are developed based on the source - https://github.com/pegasystems/constellation-ui-gallery
+
 ## 🚀 Active Components
 
 ### 1. Twitter Feed Widget
