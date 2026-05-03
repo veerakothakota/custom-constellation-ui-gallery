@@ -14,7 +14,7 @@ A modern, enterprise-grade social media integration.
 
 ![Story Book Screenshot](./screenshots/TwitterFeedWidget.png)
 ![Case Widget Settings Screenshot](./screenshots/Widget_Screenshot_1.png)
-![Case Feed Widget Error Screenshot](./screenshots/Widget_Screenshot_2.png)
+
 ![Case Feed Widget Screenshot](./screenshots/Widget_Screenshot_3.png)
 
 ### 2. Password Input Enhanced
